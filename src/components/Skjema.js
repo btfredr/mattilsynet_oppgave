@@ -29,13 +29,15 @@ const Skjema = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={(e) => submit(e)}>
+    <div className="formContainer">
+      <h1>Ønsker du å gjøre endringer?</h1>
+      <form onSubmit={(e) => submit(e)} className="form">
+        <label>Dyrehold ID</label>
         <select
           onChange={(e) => handle(e)}
           id="dyreholdId"
           value={data.dyreholdId}
-          type="text"
+          type="number"
           placeholder="Dyrehold ID"
         >
           <option value="1">1</option>
@@ -43,6 +45,7 @@ const Skjema = () => {
           <option value="3">3</option>
           <option value="4">4</option>
         </select>
+        <label>Individ</label>
         <input
           onChange={(e) => handle(e)}
           id="individ"
@@ -50,6 +53,7 @@ const Skjema = () => {
           type="number"
           placeholder="Individ"
         />
+        <label>Produksjonsplass ID</label>
         <input
           onChange={(e) => handle(e)}
           id="produksjonsplassId"
