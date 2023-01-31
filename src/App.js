@@ -2,6 +2,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "./components/Header";
+import Skjema from "./components/Skjema";
 
 function App() {
   const [plasser, setPlasser] = useState([]);
@@ -14,7 +15,6 @@ function App() {
 
       // setter innholdet fra APIet til konstanten
       setPlasser(result.data);
-      console.log(result.data);
     };
 
     // kjører funksjonen
@@ -38,6 +38,7 @@ function App() {
             </div>
           ))}
         </div>
+        <Skjema />
       </div>
     </>
   );

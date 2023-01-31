@@ -48,6 +48,19 @@ header {
   cursor: pointer;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  background-color: #fffffc;
+  box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  margin-top: 2em;
+}
+
 li {
   list-style: none;
+}
+
+h1 {
+  margin-bottom: 1em;
 }
