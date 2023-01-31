@@ -1,13 +1,14 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Header from "./components/Header";
 
 function App() {
   const [plasser, setPlasser] = useState([]);
 
   useEffect(() => {
     const fetchPlasser = async () => {
-      const url = `http://localhost:5000/produksjonsplass`;
+      const url = `http://localhost:4000/produksjonsplass`;
       // henter inn produksjonsplassene fra APIet
       const result = await axios(url);
 
@@ -22,9 +23,9 @@ function App() {
 
   return (
     <>
+      <Header />
       <div className="container">
-        <h1>Mattilsynet oppgave</h1>
-
+        <h1>Produksjonsplasser</h1>
         <div className="produksjonsplasser">
           {plasser.map((plass) => (
             <div className="produksjonsplass" key={plass.produksjonsplassid}>
