@@ -29,7 +29,12 @@ function App() {
         <div className="produksjonsplasser">
           {plasser.map((plass) => (
             <div className="produksjonsplass" key={plass.produksjonsplassid}>
-              <p>{plass.kommunenummer}</p>
+              <ul>
+                <li>Bruksnummer: {plass.bruksnummer}</li>
+                <li>Bygningsnummer: {plass.bygningsnummer}</li>
+                <li>Gårdsnummer: {plass.gaardsnummer}</li>
+                <li>Produksjonsplass ID: {plass.produksjonsplassid}</li>
+              </ul>
             </div>
           ))}
         </div>

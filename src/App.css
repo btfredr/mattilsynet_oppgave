@@ -25,6 +25,7 @@ header {
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 3em;
 }
 
 .produksjonsplasser {
@@ -45,4 +46,8 @@ header {
 .produksjonsplass:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   cursor: pointer;
+}
+
+li {
+  list-style: none;
 }
