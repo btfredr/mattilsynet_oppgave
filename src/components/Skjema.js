@@ -14,16 +14,35 @@ const Skjema = () => {
     setData(newdata);
     console.log(newdata);
   }
+
+  function submit(e) {
+    e.preventDefault();
+    axios
+      .post(url, {
+        dyreholdId: data.dyreholdId,
+        individ: data.individ,
+        produksjonsplassId: data.produksjonsplassId,
+      })
+      .then((res) => {
+        console.log(res.data);
+      });
+  }
+
   return (
     <div>
-      <form>
-        <input
+      <form onSubmit={(e) => submit(e)}>
+        <select
           onChange={(e) => handle(e)}
           id="dyreholdId"
           value={data.dyreholdId}
           type="text"
           placeholder="Dyrehold ID"
-        />
+        >
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
         <input
           onChange={(e) => handle(e)}
           id="individ"
@@ -38,6 +57,7 @@ const Skjema = () => {
           type="text"
           placeholder="Produksjonsplass ID"
         />
+        <button>Send</button>
       </form>
     </div>
   );
